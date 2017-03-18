@@ -25,7 +25,7 @@ def main():
     service = OAuth2Service(
         client_id=client_id, # your App ID from https://wakatime.com/apps
         client_secret=secret, # your App Secret from https://wakatime.com/apps
-        name='wakatime',
+        name='Wakello',
         authorize_url='https://wakatime.com/oauth/authorize',
         access_token_url='https://wakatime.com/oauth/token',
         base_url='https://wakatime.com/api/v1/')
