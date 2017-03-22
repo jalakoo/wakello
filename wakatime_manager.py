@@ -3,16 +3,134 @@
 from credentials import Credentials
 from datetime import date, datetime
 from json import dumps
-from urllib.parse import urlencode, ParseResult, parse_qsl
+from urllib.parse import urlencode, ParseResult, parse_qsl, unquote, urlparse, ParseResult
 from urllib.request import Request, urlopen, unquote, urlparse
 from urllib.error import URLError, HTTPError
 from http.client import HTTPResponse
+from os.path import isfile
+
 import argparse
 import base64
 import json
 import math
+import os
+
+# try:
+#     from urllib import urlencode, unquote
+#     from urlparse import urlparse, parse_qsl, ParseResult
+# except ImportError:
+#     # Python 3 fallback
+#     from urllib.parse import (
+#         urlencode, unquote, urlparse, parse_qsl, ParseResult
+#     )
+
+CREDENTIALS = "credentials.json"
+AUTH_BASE_URL = "https://wakatime.com/oauth/authorize"
+REDIRECT_URL = "https://wakatime.com/oauth/test"
+# Client id = App id
+CLIENT_ID_KEY = "wakatime_client_id"
+SECRET_KEY = "wakatime_secret"
+TOKEN_KEY = "wakatime_token"
 
 class WakatimeManager(object):
+
+    def __init__(self):
+        credentialsData = None
+        # Load token if available from previous session.
+        filepath = self.credentialsFilePath()
+        print('Credentials filepath: ', filepath)
+        if isfile(filepath):
+            with open(filepath, 'r') as f:
+                try:
+                    credentialsData = json.load(f)
+                    self.clientId = credentialsData[CLIENT_ID_KEY]
+                    self.secret = credentialsData[SECRET_KEY]
+                    print("API KEY loaded: ", self.clientId)
+                    print("SECRET loaded: ", self.secret)
+                except:
+                    pass
+        # Request a new token.
+        if credentialsData == None:
+            credentialsData = {}
+
+        try:
+            self.clientId = credentialsData[CLIENT_ID_KEY]
+        except KeyError:
+            self.clientId = self.newClientId()
+            if self.clientId == None:
+                print('No client id entered. Exiting.')
+                return
+            self.saveCredential(CLIENT_ID_KEY, self.clientId)
+
+        try:
+            self.secret = credentialsData[SECRET_KEY]
+        except KeyError:
+            self.secret = self.newSecret()
+            if self.secret == None:
+                print('No app secret entered. Exiting.')
+                return
+            self.saveCredential(SECRET_KEY, self.secret)
+
+        # TODO: Clean up
+        try:
+            token = credentialsData[TOKEN_KEY]
+            if token != None:
+                self.token = token
+                print("Token loaded: ", self.token)
+                return
+
+            token = self.getNewToken()
+
+            if token == None:
+                print('No token entered. Exiting.')
+            else:
+                self.token = token
+                self.saveCredential(TOKEN_KEY, self.token)
+                print("Token saved: ", self.token)
+        except KeyError:
+            self.token = self.getNewToken()
+            if self.token == None:
+                print('No token entered. Exiting.')
+                return
+            self.saveCredential(TOKEN_KEY, self.token)
+            print("New Token saved: ", self.token)
+
+
+
+    def newClientId(self):
+        # Client id = Wakatime app id
+        key = input("Enter Wakatime App Id: ")
+        return key
+
+    def newSecret(self):
+        key = input("Enter Wakatime App Secret: ")
+        return key
+
+    def credentialsFilePath(self):
+        filepath = os.getenv('APPDATA')
+        if filepath == None:
+            return CREDENTIALS
+        path = "{}{}", format(filepath), CREDENTIALS
+        return path
+
+    def saveCredential(self, key, value):
+        # Save to a JSON file
+        fileJson = None
+        filepath = self.credentialsFilePath()
+        if isfile(filepath):
+            try:
+                with open(filepath, 'r') as f:
+                    fileJson = json.load(f)
+            except json.decoder.JSONDecodeError as e:
+                print("{}: Error loading credentials:{}".format(time.time(), e))
+                fileJson = {}
+        else:
+            fileJson = {}
+        if not key in fileJson:
+            fileJson[key] = {}
+        fileJson[key] = value
+        with open(filepath, 'w') as f:
+            json.dump(fileJson, f, indent=4)
 
     def getHours(self, repo, branches):
         # parser = argparse.ArgumentParser()
@@ -110,17 +228,11 @@ class WakatimeManager(object):
             # print('JSON: ', result)
             return result
 
-    from json import dumps
-
-    try:
-        from urllib import urlencode, unquote
-        from urlparse import urlparse, parse_qsl, ParseResult
-    except ImportError:
-        # Python 3 fallback
-        from urllib.parse import (
-            urlencode, unquote, urlparse, parse_qsl, ParseResult
-        )
-
+    def getNewToken(self):
+        params = {'client_id':self.clientId, 'response_type':'code', 'redirect_uri':REDIRECT_URL, 'scope':'email,read_logged_time'}
+        url = self.add_url_params(AUTH_BASE_URL, params)
+        token = input('Goto the following address into a browser: ' + url + ' then enter the token here: ')
+        return token
 
     def add_url_params(self, url, params):
         """ Add GET params to provided URL being aware of existing.
@@ -162,3 +274,8 @@ class WakatimeManager(object):
         ).geturl()
 
         return new_url
+
+# For self running
+if __name__ == '__main__':
+    wt = WakatimeManager()
+    # wt.getCurrentUserInfo()

@@ -22,20 +22,20 @@ TOKEN_KEY = "trello_token"
 class TrelloManager(object):
 
     def __init__(self):
-        trelloData = None
+        credentialsData = None
         # Load token if available from previous session.
         filepath = self.credentialsFilePath()
         print('Credentials filepath: ', filepath)
         if isfile(filepath):
             with open(filepath, 'r') as f:
                 try:
-                    trelloData = json.load(f)
-                    self.token = trelloData[TOKEN_KEY]
+                    credentialsData = json.load(f)
+                    self.token = credentialsData[TOKEN_KEY]
                     print("Token loaded: ", self.token)
                 except:
                     pass
         # Request a new token.
-        if trelloData == None:
+        if credentialsData == None:
             token = self.getNewToken()
             self.saveToken(token)
             self.token = token
@@ -74,7 +74,7 @@ class TrelloManager(object):
         token = input("Paste this page in a browser: " + url + ". Then enter token here: ")
         return token
 
-    def getListCards(self, listId):
+    def getCardsInList(self, listId):
         url = BASE_URL + "lists/" + listId + "/cards?key=" + Credentials().trello_api_key + "&token=" + self.token
         headers = {}
         req = Request(url, None, headers)
@@ -95,7 +95,18 @@ class TrelloManager(object):
             # print('JSON: ', result)
             return result
 
-    # def add_url_params(self, url, params):
+    # def getTargetedCards(self, cardArray, trelloUserId, ):
+
+        # Loop through cards, filtering only for cards with user as member and
+
+
+        # Trello batch calling
+        # https: // api.trello.com / 1 / batch /?urls = / members / trello /, boards / 4
+        # eea4ffc91e31d1746000046, cards / 74836e2
+        # c91e31d1746008921 / pluginData & key = [application_key] & token = [optional_auth_token]
+
+
+        # def add_url_params(self, url, params):
     #     """ Add GET params to provided URL being aware of existing.
     #
     #     :param url: string of target URL
@@ -139,7 +150,8 @@ class TrelloManager(object):
 # For self running
 if __name__ == '__main__':
     tm = TrelloManager()
-    cards_array = tm.getListCards(Credentials().trello_in_progress_dev_list)
-    print('Cards: ', cards_array)
+    cards_array = tm.getCardsInList(Credentials().trello_in_progress_dev_list)
+    print('Number of Cards in list: ', len(cards_array))
+
 
 
