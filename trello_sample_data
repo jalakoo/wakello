@@ -1,4 +1,104 @@
-# SAMPLE get TRELLO CARD boards - https://api.trello.com/1/member/me/boards?fields=name,idList&member_fields=fullName&key=[application_key]&token=[optional_auth_token]
+# SAMPLE User data - https://api.trello.com/1/members/me?fields=username,fullName,url&boards=all&board_fields=name&organizations=all&organization_fields=displayName&key=[application_key]&token=[optional_auth_token]
+GET/1/Member/me
+
+https://trello.com/1/connect?key=17a0a7d40421a80fec344d24aa851d33&name=Wakello&response_type=token
+
+{
+    "id": "507c3fe3eb5e7d727500659b",
+    "avatarHash": "b5c0b919b0b71a70ddf8e625e7264d2e",
+    "bio": "",
+    "bioData": null,
+    "confirmed": true,
+    "fullName": "Jason Koo",
+    "idPremOrgsAdmin": [],
+    "initials": "JK",
+    "memberType": "normal",
+    "products": [
+        10
+    ],
+    "status": "disconnected",
+    "url": "https://trello.com/jasonkoo1",
+    "username": "jasonkoo1",
+    "avatarSource": "upload",
+    "email": "jason.koo@tealium.com",
+    "gravatarHash": "3f1d6ee744304a6ef3ebe6cee04576b0",
+    "idBoards": [
+        "507c3fe3eb5e7d72750065a8",
+        "4fa16c78343dd368067c2a7f",
+        "507d8b4a4a0359c612a9e4d8",
+        "507dbd5e40a7007b1098b83e",
+        "50e4634bc925119d260012c2",
+        "510c55a05b6b1c1f74000a09",
+        "504688161c24a7b4703f1b18",
+        "5134d22326b80f3c7e00c0eb",
+        "5148afbea3b3313e3d001f11",
+        "515a024515a8d7f5480001c6",
+        "5187db73909290031900ddd8",
+        "5176f2656c3efd7e7c0007f6",
+        "51ae23aaa8c62a4c4400289c",
+        "51d2001279a7ef953b00006c",
+        "51f7e48ce150d753590001c7",
+        "52165ed20904522e5300018d",
+        "51f81a75bb45d09321000dc0",
+        "51f7d6b66cba9ab778005f10",
+        "4fa16c8ec6986497358e6fd6",
+        "528bbafb35935b884a006612",
+        "52c213e8836e999e68028c08",
+        "52d426cfd392342a5673715f",
+        "52f008db497a8d6351ff9012",
+        "52278a2b60e80f460f000485",
+        "533b3bd5ff4bad3a3672b23f",
+        "5388c0f66b426d8647961eff",
+        "53b30197b7233097390a88e9",
+        "543c2b5bc4cdc0b1aebea8a6",
+        "54aaecd6db536a3595064319",
+        "54aaf3d7d2cd158cd26b88ac",
+        "54d281547df7eb9c75b6cd8b",
+        "54d3ab7b01b6171c9cc91004",
+        "54d3ab50a22f98339c68165c",
+        "559d5bb916de2ea9282ba5ab",
+        "55ddef6973cddf84f3211956",
+        "55ce3711810825c54bc713e0",
+        "55d26bba944329476e2a291d",
+        "578fc5fad37c7ab1099dc861",
+        "57840fd486d7f553d09e458f",
+        "58113ba8900945e593d501e8",
+        "5820d13d69707ed5632c133b"
+    ],
+    "idEnterprise": null,
+    "idOrganizations": [
+        "51f695cc3e11328b520031d2"
+    ],
+    "idEnterprisesAdmin": [],
+    "loginTypes": [
+        "google",
+        "android",
+        "password"
+    ],
+    "oneTimeMessagesDismissed": [
+        "newtrelloIntro",
+        "GoldIntro"
+    ],
+    "prefs": {
+        "sendSummaries": true,
+        "minutesBetweenSummaries": -1,
+        "minutesBeforeDeadlineToNotify": 1440,
+        "colorBlind": false,
+        "locale": ""
+    },
+    "trophies": [],
+    "uploadedAvatarHash": "b5c0b919b0b71a70ddf8e625e7264d2e",
+    "premiumFeatures": [
+        "additionalStickers",
+        "customStickers",
+        "additionalBoardBackgrounds",
+        "customBoardBackgrounds",
+        "largeAttachments",
+        "customEmoji",
+        "savedSearches"
+    ],
+    "idBoardsPinned": null
+}
 
 
 # SAMPLE get Trello board - https://api.trello.com/1/boards/9Nf2GJpk?fields=name,idList&member_fields=fullName&key=[application_key]&token=[optional_auth_token]
@@ -46,9 +146,91 @@
     }
 }
 
+# SAMPLE CARD - List Output - https://api.trello.com/1/lists/4eea4ffc91e31d174600004a/cards?key=[application_key]&token=[optional_auth_token]
+GET/1/Lists/[id]/cards
+
+        "id": "58517b3500e3279de2c06343",
+        "checkItemStates": null,
+        "closed": false,
+        "dateLastActivity": "2017-03-17T20:10:12.718Z",
+        "desc": "+ TagManagement Module\n+ RemoteCommands Module\n+ Datasource Module\n \nTrack branch progress: https://github.com/Tealium/tealium-swift/tree/tagmanagement\n\n-----------------------------------------------------\n\n#### Master Card Reference (if applicable)\n(card URL here)",
+        "descData": {
+            "emoji": {}
+        },
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idList": "5784203f502f79d4a8044494",
+        "idMembersVoted": [],
+        "idShort": 7054,
+        "idAttachmentCover": null,
+        "manualCoverAttachment": false,
+        "idLabels": [
+            "545c730774d650d56783859c",
+            "58c84a98ced82109ffbb535b"
+        ],
+        "name": "(45) Devices: Tealium-Swift: 1.2.0 - TagManagement Module",
+        "pos": 121047040,
+        "shortLink": "Yt3fX7jY",
+        "badges": {
+            "votes": 0,
+            "viewingMemberVoted": false,
+            "subscribed": true,
+            "fogbugz": "",
+            "checkItems": 73,
+            "checkItemsChecked": 9,
+            "comments": 5,
+            "attachments": 3,
+            "description": true,
+            "due": "2017-03-27T19:00:00.000Z",
+            "dueComplete": false
+        },
+        "dueComplete": false,
+        "due": "2017-03-27T19:00:00.000Z",
+        "idChecklists": [
+            "58517b3500e3279de2c06389",
+            "58517b3500e3279de2c06344",
+            "58517b3500e3279de2c06355",
+            "58517b3500e3279de2c0634d",
+            "58517b3500e3279de2c06346",
+            "58517b3500e3279de2c0635b",
+            "58517b3500e3279de2c0634e",
+            "58517b3500e3279de2c06349",
+            "58517b3500e3279de2c06360",
+            "58517b3500e3279de2c06370",
+            "58517b3500e3279de2c0634c",
+            "58517b3500e3279de2c06348",
+            "58517b3500e3279de2c06345",
+            "58517b3500e3279de2c06368"
+        ],
+        "idMembers": [
+            "507c3fe3eb5e7d727500659b",
+            "528a80d697b9bc45160008e8"
+        ],
+        "labels": [
+            {
+                "id": "545c730774d650d56783859c",
+                "idBoard": "51f7e48ce150d753590001c7",
+                "name": "Type: Product Change - Enhancement",
+                "color": "orange",
+                "uses": 202
+            },
+            {
+                "id": "58c84a98ced82109ffbb535b",
+                "idBoard": "51f7e48ce150d753590001c7",
+                "name": "Scope: Integrations - Devices",
+                "color": "blue",
+                "uses": 11
+            }
+        ],
+        "shortUrl": "https://trello.com/c/Yt3fX7jY",
+        "subscribed": true,
+        "url": "https://trello.com/c/Yt3fX7jY/7054-45-devices-tealium-swift-1-2-0-tagmanagement-module"
+    },
+
+
 
 
 # SAMPLE TRELLO CARD ATTACHMENTS (Where github power up stores data) - https://api.trello.com/1/cards/Yt3fX7jY/attachments?fields=name,idList&member_fields=fullName&key=[application_key]&token=[optional_auth_token]
+GET /1/cards/[id]/attachments
 
 [
     {

@@ -52,7 +52,7 @@ class WakatimeManager(object):
 
     def getSummaries(self, createdAt, project, branches):
         creds = Credentials
-        api_key = creds.api_key
+        api_key = creds.wakatime_api_key
         api_bytes = bytes(api_key, 'utf-8')
         encoded_api_key = base64.b64encode(api_bytes,altchars=None)
         prepended_encoded_api_key = 'Basic '+ str(encoded_api_key, 'utf-8')
