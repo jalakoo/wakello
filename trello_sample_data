@@ -1,0 +1,939 @@
+# SAMPLE get TRELLO CARD boards - https://api.trello.com/1/member/me/boards?fields=name,idList&member_fields=fullName&key=[application_key]&token=[optional_auth_token]
+
+
+# SAMPLE get Trello board - https://api.trello.com/1/boards/9Nf2GJpk?fields=name,idList&member_fields=fullName&key=[application_key]&token=[optional_auth_token]
+{
+    "id": "51f7e48ce150d753590001c7",
+    "name": "Engineering - Platform - In Progress",
+    "desc": "",
+    "descData": null,
+    "closed": false,
+    "idOrganization": "51f695cc3e11328b520031d2",
+    "pinned": false,
+    "url": "https://trello.com/b/9Nf2GJpk/engineering-platform-in-progress",
+    "shortUrl": "https://trello.com/b/9Nf2GJpk",
+    "prefs": {
+        "permissionLevel": "org",
+        "voting": "disabled",
+        "comments": "org",
+        "invitations": "admins",
+        "selfJoin": false,
+        "cardCovers": false,
+        "cardAging": "pirate",
+        "calendarFeedEnabled": false,
+        "background": "blue",
+        "backgroundImage": null,
+        "backgroundImageScaled": null,
+        "backgroundTile": false,
+        "backgroundBrightness": "dark",
+        "backgroundColor": "#0079BF",
+        "canBePublic": false,
+        "canBeOrg": false,
+        "canBePrivate": false,
+        "canInvite": true
+    },
+    "labelNames": {
+        "green": "",
+        "yellow": "",
+        "orange": "Type: Product Change - Enhancement",
+        "red": "",
+        "purple": "",
+        "blue": "Scope: Product - UDH",
+        "sky": "",
+        "lime": "",
+        "pink": "",
+        "black": "State: Open for QA"
+    }
+}
+
+
+
+# SAMPLE TRELLO CARD ATTACHMENTS (Where github power up stores data) - https://api.trello.com/1/cards/Yt3fX7jY/attachments?fields=name,idList&member_fields=fullName&key=[application_key]&token=[optional_auth_token]
+
+[
+    {
+        "id": "58cc1dc9343951f1c079f91b",
+        "bytes": null,
+        "date": "2017-03-17T17:32:57.496Z",
+        "edgeColor": null,
+        "idMember": "507c3fe3eb5e7d727500659b",
+        "isUpload": false,
+        "mimeType": "",
+        "name": "#20 TagManagement Module",
+        "previews": [],
+        "url": "https://github.com/Tealium/tealium-swift/issues/20"
+    },
+    {
+        "id": "58cc216157f3777d85f4ba57",
+        "bytes": null,
+        "date": "2017-03-17T17:48:17.085Z",
+        "edgeColor": null,
+        "idMember": "507c3fe3eb5e7d727500659b",
+        "isUpload": false,
+        "mimeType": "",
+        "name": "#21 Remote Commands Module",
+        "previews": [],
+        "url": "https://github.com/Tealium/tealium-swift/issues/21"
+    },
+    {
+        "id": "58cc4211a62b5ca2ebd137cc",
+        "bytes": null,
+        "date": "2017-03-17T20:07:45.994Z",
+        "edgeColor": null,
+        "idMember": "507c3fe3eb5e7d727500659b",
+        "isUpload": false,
+        "mimeType": "",
+        "name": "1.2.0",
+        "previews": [],
+        "url": "https://github.com/Tealium/tealium-swift/tree/1.2.0"
+    }
+]
+
+
+# SAMPLE TRELLO CARD INFO - https://api.trello.com/1/cards/Yt3fX7jY?fields=name,idList&member_fields=fullName&key=[application_key]&token=[optional_auth_token]
+
+{
+    "id": "58517b3500e3279de2c06343",
+    "badges": {
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": true,
+        "fogbugz": "",
+        "checkItems": 73,
+        "checkItemsChecked": 9,
+        "comments": 5,
+        "attachments": 3,
+        "description": true,
+        "due": "2017-03-27T19:00:00.000Z",
+        "dueComplete": false
+    },
+    "checkItemStates": [
+        {
+            "idCheckItem": "5851b9b3a59a698caf0102ce",
+            "state": "complete"
+        },
+        {
+            "idCheckItem": "5851b9b61edfc90550fc24c3",
+            "state": "complete"
+        },
+        {
+            "idCheckItem": "585aa1c21d29e2ba77dc8864",
+            "state": "complete"
+        },
+        {
+            "idCheckItem": "58b929200689d9e5ad235d6e",
+            "state": "complete"
+        },
+        {
+            "idCheckItem": "58c1c8cfa9d7f183c82ad5fe",
+            "state": "complete"
+        },
+        {
+            "idCheckItem": "58c86d9733a4737d03bfe0d4",
+            "state": "complete"
+        },
+        {
+            "idCheckItem": "58c86da9157623f98e7fe548",
+            "state": "complete"
+        },
+        {
+            "idCheckItem": "58c9765acdaf2d5c7f7fcbe6",
+            "state": "complete"
+        },
+        {
+            "idCheckItem": "58c97672f86043491c54a03d",
+            "state": "complete"
+        }
+    ],
+    "closed": false,
+    "dateLastActivity": "2017-03-17T20:10:12.718Z",
+    "desc": "+ TagManagement Module\n+ RemoteCommands Module\n+ Datasource Module\n \nTrack branch progress: https://github.com/Tealium/tealium-swift/tree/tagmanagement\n\n-----------------------------------------------------\n\n#### Master Card Reference (if applicable)\n(card URL here)",
+    "descData": {
+        "emoji": {}
+    },
+    "due": "2017-03-27T19:00:00.000Z",
+    "dueComplete": false,
+    "email": null,
+    "idBoard": "51f7e48ce150d753590001c7",
+    "idChecklists": [
+        "58517b3500e3279de2c06389",
+        "58517b3500e3279de2c06344",
+        "58517b3500e3279de2c06355",
+        "58517b3500e3279de2c0634d",
+        "58517b3500e3279de2c06346",
+        "58517b3500e3279de2c0635b",
+        "58517b3500e3279de2c0634e",
+        "58517b3500e3279de2c06349",
+        "58517b3500e3279de2c06360",
+        "58517b3500e3279de2c06370",
+        "58517b3500e3279de2c0634c",
+        "58517b3500e3279de2c06348",
+        "58517b3500e3279de2c06345",
+        "58517b3500e3279de2c06368"
+    ],
+    "idLabels": [
+        "545c730774d650d56783859c",
+        "58c84a98ced82109ffbb535b"
+    ],
+    "idList": "5784203f502f79d4a8044494",
+    "idMembers": [
+        "507c3fe3eb5e7d727500659b",
+        "528a80d697b9bc45160008e8"
+    ],
+    "idShort": 7054,
+    "idAttachmentCover": null,
+    "manualCoverAttachment": false,
+    "labels": [
+        {
+            "id": "545c730774d650d56783859c",
+            "idBoard": "51f7e48ce150d753590001c7",
+            "name": "Type: Product Change - Enhancement",
+            "color": "orange",
+            "uses": 198
+        },
+        {
+            "id": "58c84a98ced82109ffbb535b",
+            "idBoard": "51f7e48ce150d753590001c7",
+            "name": "Scope: Integrations - Devices",
+            "color": "blue",
+            "uses": 11
+        }
+    ],
+    "name": "(45) Devices: Tealium-Swift: 1.2.0 - TagManagement Module",
+    "pos": 121047040,
+    "shortUrl": "https://trello.com/c/Yt3fX7jY",
+    "url": "https://trello.com/c/Yt3fX7jY/7054-45-devices-tealium-swift-1-2-0-tagmanagement-module"
+}
+
+# SAMPLE CHECKLIST FROM CARD - https://api.trello.com/1/cards/Yt3fX7jY/checklists?fields=name,idList&member_fields=fullName&key=[application_key]&token=[optional_auth_token]
+
+[
+    {
+        "id": "58517b3500e3279de2c06389",
+        "name": "Pre-Release Checklist: Security",
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idCard": "58517b3500e3279de2c06343",
+        "pos": 137216,
+        "checkItems": [
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06389",
+                "id": "58517b3500e3279de2c0638a",
+                "name": "All changes certified by Information Security",
+                "nameData": null,
+                "pos": 249401
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06389",
+                "id": "58517b3500e3279de2c0638b",
+                "name": "All OWASP security regression tests pass",
+                "nameData": null,
+                "pos": 150294
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06389",
+                "id": "58517b3500e3279de2c0638c",
+                "name": "Confirmed each code change was peer-reviewed",
+                "nameData": null,
+                "pos": 166920
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06389",
+                "id": "58517b3500e3279de2c0638d",
+                "name": "Design review conducted to identify any entry point changes or additions",
+                "nameData": null,
+                "pos": 183865
+            }
+        ]
+    },
+    {
+        "id": "58517b3500e3279de2c06344",
+        "name": "Submitter:  Requesting / Affected Clients",
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idCard": "58517b3500e3279de2c06343",
+        "pos": 8192,
+        "checkItems": []
+    },
+    {
+        "id": "58517b3500e3279de2c06355",
+        "name": "Engineering - Affected Components - DevOps",
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idCard": "58517b3500e3279de2c06343",
+        "pos": 172544,
+        "checkItems": [
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06355",
+                "id": "58517b3500e3279de2c06356",
+                "name": "Component Cookbooks - Chef",
+                "nameData": null,
+                "pos": 220510
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06355",
+                "id": "58517b3500e3279de2c06357",
+                "name": "Component Environments - Chef",
+                "nameData": null,
+                "pos": 237412
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06355",
+                "id": "58517b3500e3279de2c06358",
+                "name": "Service Databags - Chef",
+                "nameData": null,
+                "pos": 245795.5
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06355",
+                "id": "58517b3500e3279de2c06359",
+                "name": "Production Deployment Scripts - Jenkins",
+                "nameData": null,
+                "pos": 262383.5
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06355",
+                "id": "58517b3500e3279de2c0635a",
+                "name": "QA Deployment Scripts - Jenkins",
+                "nameData": null,
+                "pos": 279498.5
+            }
+        ]
+    },
+    {
+        "id": "58517b3500e3279de2c0634d",
+        "name": "Engineering Code Changes (Pull-Request URLs) ",
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idCard": "58517b3500e3279de2c06343",
+        "pos": 179200,
+        "checkItems": []
+    },
+    {
+        "id": "58517b3500e3279de2c06346",
+        "name": "Engineering QA - Testing Checklist",
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idCard": "58517b3500e3279de2c06343",
+        "pos": 63488,
+        "checkItems": [
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06346",
+                "id": "58517b3500e3279de2c06347",
+                "name": "Reviewed by product QA Lead",
+                "nameData": null,
+                "pos": 16895
+            }
+        ]
+    },
+    {
+        "id": "58517b3500e3279de2c0635b",
+        "name": "Engineering Post-Release - Production Verification",
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idCard": "58517b3500e3279de2c06343",
+        "pos": 195584,
+        "checkItems": [
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c0635b",
+                "id": "58517b3500e3279de2c0635c",
+                "name": "Feature changes have been verified by QA",
+                "nameData": null,
+                "pos": 17292
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c0635b",
+                "id": "58517b3500e3279de2c0635d",
+                "name": "Changes have been verified by Development",
+                "nameData": null,
+                "pos": 8646
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c0635b",
+                "id": "58517b3500e3279de2c0635e",
+                "name": "Envirionment changes have been verified by DevOps",
+                "nameData": null,
+                "pos": 12969
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c0635b",
+                "id": "58517b3500e3279de2c0635f",
+                "name": "Release is Complete",
+                "nameData": null,
+                "pos": 34667
+            }
+        ]
+    },
+    {
+        "id": "58517b3500e3279de2c0634e",
+        "name": "Pre-Release Checklist: Development",
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idCard": "58517b3500e3279de2c06343",
+        "pos": 131072,
+        "checkItems": [
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c0634e",
+                "id": "58517b3500e3279de2c0634f",
+                "name": "All affected components are listed",
+                "nameData": null,
+                "pos": 17232
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c0634e",
+                "id": "58517b3500e3279de2c06350",
+                "name": "All code changes have been reviewed by component tech-lead(s)",
+                "nameData": null,
+                "pos": 33925
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c0634e",
+                "id": "58517b3500e3279de2c06351",
+                "name": "All Dev pull requests have been provided",
+                "nameData": null,
+                "pos": 42028.5
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c0634e",
+                "id": "58517b3500e3279de2c06352",
+                "name": "All appropriate unit tests have been added / updated",
+                "nameData": null,
+                "pos": 37976.75
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c0634e",
+                "id": "58517b3500e3279de2c06353",
+                "name": "(Development Leadership to check off the following when completed)",
+                "nameData": null,
+                "pos": 8616
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c0634e",
+                "id": "58517b3500e3279de2c06354",
+                "name": "All hours are accounted",
+                "nameData": null,
+                "pos": 12924
+            }
+        ]
+    },
+    {
+        "id": "58517b3500e3279de2c06349",
+        "name": "Pre-Release Checklist: Technical Writers",
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idCard": "58517b3500e3279de2c06343",
+        "pos": 152576,
+        "checkItems": [
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06349",
+                "id": "58517b3500e3279de2c0634a",
+                "name": "All applicable knowledge base entries have been updated or provided",
+                "nameData": null,
+                "pos": 16386
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06349",
+                "id": "58517b3500e3279de2c0634b",
+                "name": "Need for feature announcement has been determined",
+                "nameData": null,
+                "pos": 50132
+            }
+        ]
+    },
+    {
+        "id": "58517b3500e3279de2c06360",
+        "name": "Pre-Release Checklist: QA",
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idCard": "58517b3500e3279de2c06343",
+        "pos": 139264,
+        "checkItems": [
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06360",
+                "id": "58517b3500e3279de2c06361",
+                "name": "All OWASP security regression tests pass",
+                "nameData": null,
+                "pos": 16511
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06360",
+                "id": "58517b3500e3279de2c06362",
+                "name": "All applicable automated regression tests pass",
+                "nameData": null,
+                "pos": 92567
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06360",
+                "id": "58517b3500e3279de2c06363",
+                "name": "Changes have been verified",
+                "nameData": null,
+                "pos": 109949
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06360",
+                "id": "58517b3500e3279de2c06364",
+                "name": "QA has certified all Dev and DevOps changes",
+                "nameData": null,
+                "pos": 126520
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06360",
+                "id": "58517b3500e3279de2c06365",
+                "name": "Test plan has been reviewed by product QA Lead",
+                "nameData": null,
+                "pos": 54539
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06360",
+                "id": "58517b3500e3279de2c06366",
+                "name": "(QA Leadership to check off the following when completed)",
+                "nameData": null,
+                "pos": 8255.5
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06360",
+                "id": "58517b3500e3279de2c06367",
+                "name": "All hours are accounted",
+                "nameData": null,
+                "pos": 12383.25
+            }
+        ]
+    },
+    {
+        "id": "58517b3500e3279de2c06370",
+        "name": "Engineering - Affected Components - Development",
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idCard": "58517b3500e3279de2c06343",
+        "pos": 165888,
+        "checkItems": [
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06371",
+                "name": "uRest - Java",
+                "nameData": null,
+                "pos": 17171
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06372",
+                "name": "Visitor Processor - Java",
+                "nameData": null,
+                "pos": 33677
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06373",
+                "name": "uConnect - Java",
+                "nameData": null,
+                "pos": 50489
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06374",
+                "name": "Visitor Service - Java",
+                "nameData": null,
+                "pos": 67321
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06375",
+                "name": "Bulk Downloader - Java",
+                "nameData": null,
+                "pos": 83977
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06376",
+                "name": "Amazon Uploader - Java",
+                "nameData": null,
+                "pos": 101200
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06377",
+                "name": "Eventsteam Processor - Java",
+                "nameData": null,
+                "pos": 118381
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06378",
+                "name": "Message Router - Java",
+                "nameData": null,
+                "pos": 135324
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06379",
+                "name": "Data Distributor - Java",
+                "nameData": null,
+                "pos": 152467
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c0637a",
+                "name": "Query Aggregator - Java",
+                "nameData": null,
+                "pos": 169553
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c0637b",
+                "name": "Reporting Cron Jobs - Java",
+                "nameData": null,
+                "pos": 186516
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c0637c",
+                "name": "Publish Engine - Perl",
+                "nameData": null,
+                "pos": 8585.5
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c0637d",
+                "name": "Permission Cache - Java",
+                "nameData": null,
+                "pos": 178034.5
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c0637e",
+                "name": "Sitescan - Perl",
+                "nameData": null,
+                "pos": 12878.25
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c0637f",
+                "name": "Server 2 Server - Perl",
+                "nameData": null,
+                "pos": 15024.625
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06380",
+                "name": "UI Tealium iQ - Javascript",
+                "nameData": null,
+                "pos": 4292.75
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06381",
+                "name": "UI AudienceStream - Javascript",
+                "nameData": null,
+                "pos": 6439.125
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06382",
+                "name": "Web Companion - Javascript",
+                "nameData": null,
+                "pos": 7512.3125
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06383",
+                "name": "Tealium Tools - Javascript",
+                "nameData": null,
+                "pos": 8048.90625
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06384",
+                "name": "Mobile Library - Android",
+                "nameData": null,
+                "pos": 16097.8125
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06385",
+                "name": "Mobile Library - iOS",
+                "nameData": null,
+                "pos": 16634.40625
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06386",
+                "name": "Tag Templates - Javascript",
+                "nameData": null,
+                "pos": 8317.203125
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06387",
+                "name": "Tag Fingerprints - JSON",
+                "nameData": null,
+                "pos": 8451.3515625
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06370",
+                "id": "58517b3500e3279de2c06388",
+                "name": "Server 2 Server Templates - Javascript",
+                "nameData": null,
+                "pos": 15561.21875
+            }
+        ]
+    },
+    {
+        "id": "58517b3500e3279de2c0634c",
+        "name": "Engineering - Security Evidence Audit",
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idCard": "58517b3500e3279de2c06343",
+        "pos": 175872,
+        "checkItems": []
+    },
+    {
+        "id": "58517b3500e3279de2c06348",
+        "name": "Engineering Development - Requirements Checklist",
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idCard": "58517b3500e3279de2c06343",
+        "pos": 35840,
+        "checkItems": [
+            {
+                "state": "complete",
+                "idChecklist": "58517b3500e3279de2c06348",
+                "id": "5851b9b3a59a698caf0102ce",
+                "name": "(4) Module",
+                "nameData": {
+                    "emoji": {}
+                },
+                "pos": 17155
+            },
+            {
+                "state": "complete",
+                "idChecklist": "58517b3500e3279de2c06348",
+                "id": "5851b9b61edfc90550fc24c3",
+                "name": "(3) Added Unit Tests",
+                "nameData": {
+                    "emoji": {}
+                },
+                "pos": 34094
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06348",
+                "id": "5851b9b8e94bcd51afc79ac3",
+                "name": "(1) Readme updates",
+                "nameData": {
+                    "emoji": {}
+                },
+                "pos": 50727
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06348",
+                "id": "5851b9c0e9735c935f90d69d",
+                "name": "(0.25) TLC: Tealium Swift Module - Tagmanagement : https://community.tealiumiq.com/t5/Mobile-Libraries/Tealium-Swift-Module-TagManagement/ta-p/16857",
+                "nameData": {
+                    "emoji": {}
+                },
+                "pos": 109591
+            },
+            {
+                "state": "complete",
+                "idChecklist": "58517b3500e3279de2c06348",
+                "id": "585aa1c21d29e2ba77dc8864",
+                "name": "(4) Manual Testing",
+                "nameData": {
+                    "emoji": {}
+                },
+                "pos": 42410.5
+            },
+            {
+                "state": "complete",
+                "idChecklist": "58517b3500e3279de2c06348",
+                "id": "58b929200689d9e5ad235d6e",
+                "name": "(15) Remote Command Module - making runnable exclusive of TagManagement module (support via client webview, urlschemes, other background url processes)",
+                "nameData": {
+                    "emoji": {}
+                },
+                "pos": 25624.5
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06348",
+                "id": "58b9292dfac4d97f939d30d1",
+                "name": "(12) Tag Management Dispatch Service Module - Uses multicast delegate to handle client accessible UIWebView delegation -- TODO: Add listener for the remoteCommand modules jsResponse notifications.",
+                "nameData": {
+                    "emoji": {}
+                },
+                "pos": 21389.75
+            },
+            {
+                "state": "complete",
+                "idChecklist": "58517b3500e3279de2c06348",
+                "id": "58c1c8cfa9d7f183c82ad5fe",
+                "name": "(2) Datasource module to allow new tealium_datasource setting from config",
+                "nameData": {
+                    "emoji": {}
+                },
+                "pos": 29859.25
+            },
+            {
+                "state": "complete",
+                "idChecklist": "58517b3500e3279de2c06348",
+                "id": "58c86d9733a4737d03bfe0d4",
+                "name": "(1) Added TealiumUtils",
+                "nameData": {
+                    "emoji": {}
+                },
+                "pos": 84231
+            },
+            {
+                "state": "complete",
+                "idChecklist": "58517b3500e3279de2c06348",
+                "id": "58c86da9157623f98e7fe548",
+                "name": "(1) Refactor TealiumDelegateModule - use utils for multicast delegate",
+                "nameData": {
+                    "emoji": {}
+                },
+                "pos": 101149
+            },
+            {
+                "state": "complete",
+                "idChecklist": "58517b3500e3279de2c06348",
+                "id": "58c9765acdaf2d5c7f7fcbe6",
+                "name": "(1) Refactors: Tealium + TealiumModuleManager",
+                "nameData": null,
+                "pos": 27741.875
+            },
+            {
+                "state": "complete",
+                "idChecklist": "58517b3500e3279de2c06348",
+                "id": "58c97672f86043491c54a03d",
+                "name": "(1) Fix: Lifecycle",
+                "nameData": {
+                    "emoji": {}
+                },
+                "pos": 26683.1875
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06348",
+                "id": "58cc09ed61bf3d7b861776e4",
+                "name": "(0.25) TLC: Tealium Swift Module - Remote Commands: https://community.tealiumiq.com/t5/Mobile-Libraries/Tealium-Swift-Module-Remote-Commands/ta-p/17523",
+                "nameData": null,
+                "pos": 134525
+            }
+        ]
+    },
+    {
+        "id": "58517b3500e3279de2c06345",
+        "name": "Engineering DevOps - Requirements Checklist",
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idCard": "58517b3500e3279de2c06343",
+        "pos": 49664,
+        "checkItems": []
+    },
+    {
+        "id": "58517b3500e3279de2c06368",
+        "name": "Pre-Release Checklist:  Network Operations",
+        "idBoard": "51f7e48ce150d753590001c7",
+        "idCard": "58517b3500e3279de2c06343",
+        "pos": 135168,
+        "checkItems": [
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06368",
+                "id": "58517b3500e3279de2c06369",
+                "name": "All changes have been certified by DevOps",
+                "nameData": null,
+                "pos": 116366
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06368",
+                "id": "58517b3500e3279de2c0636a",
+                "name": "All required configuration changes have been made",
+                "nameData": null,
+                "pos": 33948
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06368",
+                "id": "58517b3500e3279de2c0636b",
+                "name": "All DevOps pull requests have been provided",
+                "nameData": null,
+                "pos": 50830
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06368",
+                "id": "58517b3500e3279de2c0636c",
+                "name": "All Cookbooks, Environments, and Databags have been pushed to OpsCode",
+                "nameData": null,
+                "pos": 125048
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06368",
+                "id": "58517b3500e3279de2c0636d",
+                "name": "Vagrant deployment has been tested",
+                "nameData": null,
+                "pos": 42389
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06368",
+                "id": "58517b3500e3279de2c0636e",
+                "name": "(DevOps Leadership to check off the following when completed)",
+                "nameData": null,
+                "pos": 16974
+            },
+            {
+                "state": "incomplete",
+                "idChecklist": "58517b3500e3279de2c06368",
+                "id": "58517b3500e3279de2c0636f",
+                "name": "All hours are accounted",
+                "nameData": null,
+                "pos": 25461
+            }
+        ]
+    }
+]
