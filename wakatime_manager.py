@@ -8,12 +8,13 @@ from urllib.request import Request, urlopen, unquote, urlparse
 from urllib.error import URLError, HTTPError
 from http.client import HTTPResponse
 from os.path import isfile
-
 import argparse
 import base64
+import http.client
 import json
 import math
 import os
+import urllib.parse
 
 # try:
 #     from urllib import urlencode, unquote
@@ -24,13 +25,18 @@ import os
 #         urlencode, unquote, urlparse, parse_qsl, ParseResult
 #     )
 
+# REF: https://wakatime.com/developers#users
+
 CREDENTIALS = "credentials.json"
 AUTH_BASE_URL = "https://wakatime.com/oauth/authorize"
+BASE_URL = "https://wakatime.com/api/v1/"
 REDIRECT_URL = "https://wakatime.com/oauth/test"
+TOKEN_URL = "https://wakatime.com/oauth/token"
 # Client id = App id
 CLIENT_ID_KEY = "wakatime_client_id"
 SECRET_KEY = "wakatime_secret"
-TOKEN_KEY = "wakatime_token"
+TOKEN_KEY = "wakatime_access_token"
+REFRESH_TOKEN_KEY = "wakatime_refresh_token"
 
 class WakatimeManager(object):
 
@@ -94,7 +100,6 @@ class WakatimeManager(object):
                 return
             self.saveCredential(TOKEN_KEY, self.token)
             print("New Token saved: ", self.token)
-
 
 
     def newClientId(self):
@@ -202,17 +207,24 @@ class WakatimeManager(object):
             return result
 
 
-    def getCurrentUserInfo(self):
-        creds = Credentials
-        api_key = creds.api_key
-        api_bytes = bytes(api_key, 'utf-8')
-        encoded_api_key = base64.b64encode(api_bytes, altchars=None)
-        prepended_encoded_api_key = 'Basic ' + str(encoded_api_key, 'utf-8')
-        url = 'https://wakatime.com/api/v1/'
-        path = url + 'users/current/'
-        headers = {'Authorization': prepended_encoded_api_key}
-        req = Request(path, None, headers)
-        print('Request path: ', path)
+    def getDataFor(self, path):
+        # Using API Key
+        # creds = Credentials
+        # api_key = creds.api_key
+        # api_bytes = bytes(api_key, 'utf-8')
+        # encoded_api_key = base64.b64encode(api_bytes, altchars=None)
+        # prepended_encoded_api_key = 'Basic ' + str(encoded_api_key, 'utf-8')
+        # url = 'https://wakatime.com/api/v1/'
+        # path = url + 'users/current/'
+        # headers = {'Authorization': prepended_encoded_api_key}
+
+        # Using Tokens
+        url = BASE_URL + path
+        prepended_encoded_token = 'Bearer ' + self.token
+        headers = {'Authorization':prepended_encoded_token}
+
+        req = Request(url, None, headers)
+        print('getDataFor: ', url)
         try:
             response = urlopen(req)
         except HTTPError as e:
@@ -229,10 +241,50 @@ class WakatimeManager(object):
             return result
 
     def getNewToken(self):
-        params = {'client_id':self.clientId, 'response_type':'code', 'redirect_uri':REDIRECT_URL, 'scope':'email,read_logged_time'}
+        # First Leg
+        params = {'client_id':self.clientId,
+                  'response_type':'code',
+                  'redirect_uri':REDIRECT_URL,
+                  'scope':'email,read_logged_time'}
         url = self.add_url_params(AUTH_BASE_URL, params)
-        token = input('Goto the following address into a browser: ' + url + ' then enter the token here: ')
-        return token
+        code = input('Goto the following address into a browser: ' + url + ' then enter the token here: ')
+
+        # Second Leg
+        code_params = {'client_id':self.clientId,
+                       'client_secret':self.secret,
+                       'code':code,
+                       'grant_type':'authorization_code',
+                       'redirect_uri':REDIRECT_URL}
+        request = Request(TOKEN_URL, urlencode(code_params).encode())
+        try:
+            response = urlopen(request)
+        except HTTPError as e:
+            print('The server couldn\'t fulfill the request.')
+            print('Error code: ', e.code)
+            print('Response: ', e.reason)
+        except URLError as e:
+            print('We failed to reach a server.')
+            print('Reason: ', e.reason)
+        else:
+            readResponse = HTTPResponse.read(response)
+            # returned as bytes
+            result = json.loads(readResponse.decode('utf-8'))
+
+            # SAMPLE RETURN
+            # {
+            #     'uid': '9049653a-875f-4931-9ccb-f55c690d7ed8',
+            #     'token_type': 'bearer',
+            #     'scope': 'email,read_logged_time',
+            #     'expires_in': 5184000,
+            #     'refresh_token': 'ref_vFTwk27pNMWXyuyCcvgySBnVXcpnSZxuMAUkUNHyOvJGLRAYclJjc0HjkYlSgn9Mnm2BxFagSjGNPpFG',
+            #     'access_token': 'sec_UmBllZHU7vufAtoQacAh67CPEu1WNu2ls9mXaGCutvzePZAW1YmAYaYYMCjgxwntXsfGbRMFteyBMSEj'
+            # }
+
+            print('wakatime_manager: getNewToken: json: ', result)
+            # TODO: Better way to save and recall refresh token
+            self.saveCredential(REFRESH_TOKEN_KEY,result['refresh_token'])
+
+        return result['access_token']
 
     def add_url_params(self, url, params):
         """ Add GET params to provided URL being aware of existing.
@@ -278,4 +330,5 @@ class WakatimeManager(object):
 # For self running
 if __name__ == '__main__':
     wt = WakatimeManager()
-    # wt.getCurrentUserInfo()
+    currentUser = wt.getDataFor("users/current")
+    print('wakatime_manager: main: currentUser info: ', currentUser)
