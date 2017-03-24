@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Echos current working directory
+#   and supposedly Git env variables
+#   if triggered by Git
+# echo Running $BASH_SOURCE
+# set | egrep GIT
+# echo PWD is $PWD
+
+# Environmental variable
+# GIT_AUTHOR_DATE='@1407774159 -0400'
+# GIT_AUTHOR_EMAIL=demo@example.com
+# GIT_AUTHOR_NAME='Demo User'
+# GIT_DIR=.git
+# GIT_EDITOR=:
+# GIT_INDEX_FILE=.git/index
+# GIT_PREFIX=
+
+# Get repo name -- DOESN"T QUITE WORK
+# if [ $(git rev-parse --is-bare-repository) = true ]
+# then
+#     REPOSITORY_BASENAME=$(basename "$PWD") 
+#     # Strip .git from name
+#     REPOSITORY_BASENAME=${REPOSITORY_BASENAME%.git}
+# else
+#     REPOSITORY_BASENAME=$(basename $(readlink -nf "$PWD"/..))
+# fi
+# echo REPOSITORY_BASENAME is $REPOSITORY_BASENAME
+
+# Repo name
+echo 'REPO:' $(git config --local remote.origin.url|sed -n 's#.*/\([^.]*\)\.git#\1#p')
+
+# Repo branch name
+echo 'BRANCH:' $(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+
+# Last commit message
+echo 'MESSAGE:' $(git log -1 --pretty=%B)
