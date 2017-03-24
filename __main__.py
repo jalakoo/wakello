@@ -3,6 +3,7 @@
 import argparse
 from wakatime_manager import WakatimeManager
 
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("repo", type=str, help='Remote repository name.')
@@ -12,7 +13,6 @@ def main():
     branches = args.branches
     wakatime = WakatimeManager()
     hours = wakatime.getHours(repo, branches)
-
     print('Hours for ', repo, branches, ': ', hours)
 
 if __name__ == '__main__':

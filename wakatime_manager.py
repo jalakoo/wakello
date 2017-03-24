@@ -16,15 +16,6 @@ import math
 import os
 import urllib.parse
 
-# try:
-#     from urllib import urlencode, unquote
-#     from urlparse import urlparse, parse_qsl, ParseResult
-# except ImportError:
-#     # Python 3 fallback
-#     from urllib.parse import (
-#         urlencode, unquote, urlparse, parse_qsl, ParseResult
-#     )
-
 # REF: https://wakatime.com/developers#users
 
 CREDENTIALS = "credentials.json"
@@ -137,20 +128,24 @@ class WakatimeManager(object):
         with open(filepath, 'w') as f:
             json.dump(fileJson, f, indent=4)
 
-    def getHours(self, repo, branches):
-        # parser = argparse.ArgumentParser()
-        # parser.add_argument("repo", type=str, help='Remote repository name.')
-        # parser.add_argument("branches", type=str, help='Remote repository branches to update cards for. Comma separated.')
-        # args = parser.parse_args()
-        # repo = args.repo
-        # branches = args.branches
-        user_data = self.getCurrentUserInfo()
+    def getHours(self, repoName, branch):
+
+        # Get users creation date
+        user_data = self.getDataFor("users/current", {})
         created_at_string = user_data['data']['created_at']
         created_at_datetime = datetime.strptime(created_at_string, '%Y-%m-%dT%H:%M:%SZ')
         created_at = created_at_datetime.date()
-        summary = self.getSummaries(created_at, repo, branches)
-        # TODO: Convert branches to list
-        seconds = self.grandTotalSeconds(summary, branches)
+
+        # Today's date for setting range of interest
+        date_now = date.today()
+        date_now_iso = date_now.isoformat()
+        date_past = created_at
+        date_past_iso = date_past.isoformat()
+
+        # Optional params to get interested info with
+        params = {'start':date_past_iso, 'end': date_now_iso, 'project':repoName, 'branches':[branch]}
+        summary = self.getDataFor("users/current/summaries", params)
+        seconds = self.grandTotalSeconds(summary, branch)
         hours = math.ceil(seconds/3600)
         return hours
 
@@ -173,41 +168,7 @@ class WakatimeManager(object):
 
         return grand_total_seconds
 
-    def getSummaries(self, createdAt, project, branches):
-        creds = Credentials
-        api_key = creds.wakatime_api_key
-        api_bytes = bytes(api_key, 'utf-8')
-        encoded_api_key = base64.b64encode(api_bytes,altchars=None)
-        prepended_encoded_api_key = 'Basic '+ str(encoded_api_key, 'utf-8')
-        url = 'https://wakatime.com/api/v1/'
-        path = url + 'users/current/summaries'
-        date_now = date.today()
-        date_now_iso = date_now.isoformat()
-        # Use users created at date
-        date_past = createdAt
-        date_past_iso = date_past.isoformat()
-        params = {'start':date_past_iso, 'end': date_now_iso, 'project':project, 'branches':branches}
-        path_with_params = self.add_url_params(path, params)
-        headers = {'Authorization':prepended_encoded_api_key }
-        req = Request(path_with_params, None, headers)
-        print('Request path: ', path_with_params)
-        try:
-            response = urlopen(req)
-        except HTTPError as e:
-            print('The server couldn\'t fulfill the request.')
-            print('Error code: ', e.code)
-            print('Response: ', e.reason)
-        except URLError as e:
-            print('We failed to reach a server.')
-            print('Reason: ', e.reason)
-        else:
-            readResponse = HTTPResponse.read(response)
-            result = json.loads(readResponse.decode('utf-8'))
-            # print('JSON: ', result)
-            return result
-
-
-    def getDataFor(self, path):
+    def getDataFor(self, path, params):
         # Using API Key
         # creds = Credentials
         # api_key = creds.api_key
@@ -220,11 +181,12 @@ class WakatimeManager(object):
 
         # Using Tokens
         url = BASE_URL + path
+        urlWithParams = self.add_url_params(url, params)
         prepended_encoded_token = 'Bearer ' + self.token
         headers = {'Authorization':prepended_encoded_token}
 
-        req = Request(url, None, headers)
-        print('getDataFor: ', url)
+        req = Request(urlWithParams, None, headers)
+        print('getDataFor: ', urlWithParams)
         try:
             response = urlopen(req)
         except HTTPError as e:
@@ -237,7 +199,6 @@ class WakatimeManager(object):
         else:
             readResponse = HTTPResponse.read(response)
             result = json.loads(readResponse.decode('utf-8'))
-            # print('JSON: ', result)
             return result
 
     def getNewToken(self):
@@ -330,5 +291,7 @@ class WakatimeManager(object):
 # For self running
 if __name__ == '__main__':
     wt = WakatimeManager()
-    currentUser = wt.getDataFor("users/current")
-    print('wakatime_manager: main: currentUser info: ', currentUser)
+    repoName = "wakello"
+    branch = "%7xYHN2R3-MVP-#1#2#3"
+    hours = wt.getHours(repoName,branch)
+    print("wakatime_manager: main: hours for: " + repoName + " branch: " + branch + " hours: " + str(hours))

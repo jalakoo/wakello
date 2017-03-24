@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7d36ff5-6ae5-4e54-9a7f-b06c97a81d77" name="Default" comment="" />
+    <list default="true" id="c7d36ff5-6ae5-4e54-9a7f-b06c97a81d77" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/message_parser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/__main__.py" afterPath="$PROJECT_DIR$/__main__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/post-commit.sample" afterPath="$PROJECT_DIR$/post-commit.sample" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wakatime_manager.py" afterPath="$PROJECT_DIR$/wakatime_manager.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +34,8 @@
       <file leaf-file-name="__main__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/__main__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+            <state relative-caret-position="75">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <element signature="e#20#35#0" expanded="true" />
               </folding>
@@ -37,11 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post-commit.sample" pinned="false" current-in-tab="true">
+      <file leaf-file-name="post-commit.sample" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/post-commit.sample">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="48" lean-forward="false" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+            <state relative-caret-position="540">
+              <caret line="36" column="41" lean-forward="true" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="message_parser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/message_parser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="52" lean-forward="true" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -50,8 +66,8 @@
       <file leaf-file-name="trello_manager.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trello_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="151" column="24" lean-forward="true" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="24" />
+            <state relative-caret-position="615">
+              <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="150" selection-end-column="26" />
               <folding>
                 <element signature="e#169#204#0" expanded="true" />
               </folding>
@@ -59,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wakatime_manager.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wakatime_manager.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wakatime_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="178" column="43" lean-forward="true" selection-start-line="178" selection-start-column="43" selection-end-line="178" selection-end-column="43" />
+            <state relative-caret-position="-1095">
+              <caret line="174" column="29" lean-forward="true" selection-start-line="174" selection-start-column="29" selection-end-line="174" selection-end-column="29" />
               <folding>
                 <element signature="e#20#55#0" expanded="true" />
               </folding>
@@ -89,18 +105,6 @@
             <state relative-caret-position="15">
               <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__main__usingAPIKey.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/__main__usingAPIKey.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-              <folding>
-                <element signature="e#20#55#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -157,7 +161,6 @@
         <option value="$PROJECT_DIR$/wakello_sample_data" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/WakatimeManager.py" />
-        <option value="$PROJECT_DIR$/__main__.py" />
         <option value="$PROJECT_DIR$/__main__usingAPIKey.py" />
         <option value="$PROJECT_DIR$/__main__usingOAuth.py" />
         <option value="$PROJECT_DIR$/credentials.py" />
@@ -165,8 +168,10 @@
         <option value="$PROJECT_DIR$/trello_manager.py" />
         <option value="$PROJECT_DIR$/wakatime_oauth.py" />
         <option value="$PROJECT_DIR$/credentials.json" />
-        <option value="$PROJECT_DIR$/wakatime_manager.py" />
+        <option value="$PROJECT_DIR$/message_parser.py" />
         <option value="$PROJECT_DIR$/post-commit.sample" />
+        <option value="$PROJECT_DIR$/__main__.py" />
+        <option value="$PROJECT_DIR$/wakatime_manager.py" />
       </list>
     </option>
   </component>
@@ -400,16 +405,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/__main__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <element signature="e#20#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wakello_sample_data">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -450,7 +445,7 @@
         <state relative-caret-position="30">
           <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
           <folding>
-            <element signature="e#20#55#0" expanded="true" />
+            <element signature="e#20#55#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -653,7 +648,7 @@
         <state relative-caret-position="30">
           <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
           <folding>
-            <element signature="e#20#55#0" expanded="true" />
+            <element signature="e#20#55#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -702,41 +697,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wakatime_manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="178" column="43" lean-forward="true" selection-start-line="178" selection-start-column="43" selection-end-line="178" selection-end-column="43" />
-          <folding>
-            <element signature="e#20#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trello_manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="151" column="24" lean-forward="true" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="24" />
+        <state relative-caret-position="615">
+          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="150" selection-end-column="26" />
           <folding>
             <element signature="e#169#204#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/message_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="52" lean-forward="true" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/post-commit.sample">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="41" lean-forward="true" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <element signature="e#20#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/post-commit.sample">
+    <entry file="file://$PROJECT_DIR$/wakatime_manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="48" lean-forward="false" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
-          <folding />
+        <state relative-caret-position="-1095">
+          <caret line="174" column="29" lean-forward="true" selection-start-line="174" selection-start-column="29" selection-end-line="174" selection-end-column="29" />
+          <folding>
+            <element signature="e#20#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
